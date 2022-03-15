@@ -1,8 +1,12 @@
 package calculadora;
 
+import java.util.Locale;
+
 public class Program {
 
     public static void main(String[] args) {
+        Locale.setDefault(new Locale("pt", "BR"));
+
 
         System.out.println("Testando a somar");
         boolean teste = OperacaoBasicaTeste.testar_soma();
