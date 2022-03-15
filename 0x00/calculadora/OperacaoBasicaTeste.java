@@ -1,40 +1,22 @@
+package calculadora;
 
 public class OperacaoBasicaTeste {
 
     public static boolean testar_soma() {
-        if (OperacaoBasica.somar(5, 3) == 8) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return OperacaoBasica.somar(5, 3) == 8;
+
     }
 
     public static boolean testar_subtracao() {
-        if (OperacaoBasica.subtrair(5, 3) == 2) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return OperacaoBasica.subtrair(5, 3) == 2;
     }
 
     public static boolean testar_multiplicacao() {
-        if (OperacaoBasica.multiplicar(5, 3) == 15) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return OperacaoBasica.multiplicar(5, 3) == 15;
     }
 
     public static boolean testar_divisao() {
-        if (OperacaoBasica.dividir(9, 3) == 3) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return OperacaoBasica.dividir(9, 3) == 3;
     }
 
 }
