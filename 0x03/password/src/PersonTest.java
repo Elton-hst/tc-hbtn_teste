@@ -1,10 +1,11 @@
-
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class PersonTest {
 
     Person person;
@@ -35,6 +36,18 @@ public class PersonTest {
     @ParameterizedTest
     @ValueSource(strings = {"Abc@123", "12$@hbt"})
     public void does_not_have_eight_chars(String usuario) {
+        assertTrue(person.checkUser(usuario));
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"123456789", "#$%1234"})
+    public void does_not_have_letters(String usuario) {
+        assertTrue(person.checkUser(usuario));
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"abC123456$", "Hbtn@1234", "Betty@1#2", "Hbtn@123"})
+    public void check_password_valid(String usuario) {
         assertTrue(person.checkUser(usuario));
     }
 
